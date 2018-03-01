@@ -1,0 +1,6 @@
+##########################
+# property service keys
+#
+#
+
+persist.msms.           u:object_r:radio_prop:s0

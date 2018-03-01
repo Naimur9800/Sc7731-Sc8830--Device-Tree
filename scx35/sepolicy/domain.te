@@ -1,0 +1,2 @@
+# add for Primary Storage Path switch pointer /storage/sdcard1
+allow domain tmpfs:lnk_file r_file_perms;

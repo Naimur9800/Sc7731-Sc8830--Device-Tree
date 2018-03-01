@@ -1,0 +1,6 @@
+allow shell tmpfs:lnk_file { getattr read };
+allow shell shell_data_file:sock_file write;
+
+allow init_shell wpa_exec:file { execute_no_trans };
+allow init_shell init_shell:udp_socket { create ioctl };
+allow init_shell init_shell:packet_socket { create ioctl bind};

@@ -1,0 +1,32 @@
+#allow init unlabeled:filesystem getattr;
+allow init init:capability sys_module;
+allow init shell_data_file:dir { write add_name remove_name };
+allow init shell_data_file:file { read open create unlink write };
+allow init shell_data_file:sock_file { create getattr unlink };
+allow init init:process execmem;
+allow init fuse:dir { search open read write add_name create unlink remove_name };
+allow init fuse:file { open write read append create unlink getattr rename };
+allow init init:packet_socket { create ioctl setopt read getopt };
+allow init radio:process signal;
+
+r_dir_file(init, sdcard_type)
+
+###for bug:400224 {
+allow init init:tcp_socket { create connect write read };
+allow init port:tcp_socket name_connect;
+### }
+
+allow init mediaserver:process signal;
+
+allow servicemanager servicemanager:capability sys_nice;
+allow init ashmem_device:chr_file execute;
+
+allow init vfat :dir {read write add_name create remove_name open };
+allow init vfat :file {read write rename create open };
+
+allow init init:udp_socket { ioctl create setopt getopt bind write read };
+allow init port:udp_socket name_bind;
+allow init node:udp_socket node_bind;
+
+allow init block_device:blk_file { read open create };
+allow init init:rawip_socket { create getopt setopt };

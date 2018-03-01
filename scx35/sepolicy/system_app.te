@@ -1,0 +1,14 @@
+allow system_app unlabeled:dir { search getattr write add_name };
+allow system_app prod_file:dir { create search getattr add_name remove_name read write setattr open };
+allow system_app prod_file:file { create getattr open read write ioctl unlink lock setattr};
+allow system_app shell_data_file:dir search;
+allow system_app shell_data_file:file { open read write };
+allow system_app shell_data_file:sock_file { open read write };
+allow system_app cache_file:dir { create add_name write };
+allow system_app cache_file:file { create open write };
+allow system_app block_device:dir search;
+allow system_app dalvikcache_data_file:file write;
+allow system_app sysfs_devices_system_cpu:file write;
+allow system_app wcnd:unix_stream_socket { connectto sendto };
+allow system_app rild:unix_stream_socket { connectto sendto };
+allow system_app efuse_device:chr_file { open read write };

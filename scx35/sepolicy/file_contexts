@@ -1,0 +1,97 @@
+#############################
+# productinfo files
+#
+/productinfo(/.*)?      u:object_r:prod_file:s0
+/dev/mali0              u:object_r:gpu_device:s0
+/dev/spipe_w1           u:object_r:spipe_device:s0
+/dev/spipe_w4           u:object_r:audio_device:s0
+/dev/spipe_w6           u:object_r:audio_device:s0
+/dev/spipe_w14           u:object_r:audio_device:s0
+/dev/spipe_w8           u:object_r:refnotify_device:s0
+/dev/rtc0               u:object_r:refnotify_device:s0
+/dev/sprd_gsp           u:object_r:graphics_device:s0
+/dev/lis3dh_acc         u:object_r:sensors_device:s0
+/dev/ltr_558als         u:object_r:sensors_device:s0
+/dev/sprd_sensor        u:object_r:sensors_device:s0
+/dev/sprd_rotation      u:object_r:sensors_device:s0
+/dev/sprd_isp           u:object_r:camera_device:s0
+/dev/sprd_scale         u:object_r:camera_device:s0
+/dev/sprd_image         u:object_r:camera_device:s0
+/dev/ttyV1              u:object_r:gps_device:s0
+/dev/sprd_vsp           u:object_r:video_device:s0
+/dev/sprd_coda7l        u:object_r:video_device:s0
+/dev/sprd_vpp           u:object_r:video_device:s0
+/dev/sprd_jpg           u:object_r:graphics_device:s0
+/dev/slog_w             u:object_r:slog_device:s0
+/dev/ttyGS[0-9]         u:object_r:serial_device:s0
+/dev/stty_w[0-9]*       u:object_r:radio_device:s0
+/dev/vser               u:object_r:serial_device:s0
+
+/dev/sttybt0            u:object_r:hci_attach_dev:s0
+
+/dev/socket/rild2        u:object_r:rild_socket:s0
+/dev/socket/rild3        u:object_r:rild_socket:s0
+/dev/socket/srtserver    u:object_r:srt_socket:s0
+
+/dev/stty_w0  u:object_r:tty_device:s0
+/dev/stty_w12 u:object_r:tty_device:s0
+/dev/stty_lte12 u:object_r:tty_device:s0
+/dev/stty_td12 u:object_r:tty_device:s0
+/dev/stty_lte31 u:object_r:tty_device:s0
+/dev/stty_lte[0-9] u:object_r:radio_device:s0
+/dev/stty_lte10 u:object_r:radio_device:s0
+/dev/stty_lte11 u:object_r:tty_device:s0
+
+/dev/stty_td21           u:object_r:tty_device:s0
+/dev/stty_lte21          u:object_r:tty_device:s0
+/dev/stty_td27           u:object_r:tty_device:s0
+/dev/stty_lte27          u:object_r:tty_device:s0
+
+/dev/Trout_FM            u:object_r:audio_device:s0
+/dev/pipe                u:object_r:audio_device:s0
+/dev/block/mmcblk0p2     u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p3     u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p4     u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p9     u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p10    u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p11    u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p12    u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p13    u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p14    u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0boot0  u:object_r:mmcblk_device:s0
+/dev/block/mmcblk0p[5-8] u:object_r:nv_mmcblk_device:s0
+/dev/sprd_efuse_otp      u:object_r:efuse_device:s0
+/dev/sprd_bm             u:object_r:bm_device:s0
+
+/dev/slog_wcn u:object_r:slog_device:s0
+/dev/spipe_wcn[0-9]* u:object_r:spipe_device:s0
+/dev/spipe_w[0-9]    u:object_r:spipe_device:s0
+/dev/spipe_lte2      u:object_r:spipe_device:s0
+/dev/power_ctl       u:object_r:wcn_device:s0
+/dev/download        u:object_r:wcn_device:s0
+
+#############################
+# System files
+/system/bin/mplayer     u:object_r:mediaserver_exec:s0
+/system/bin/wcnd     	u:object_r:wcnd_exec:s0
+/system/bin/engpc       u:object_r:engpc_exec:s0
+/system/xbin/zram.sh 	u:object_r:zram_exec:s0
+/system/xbin/srtd    	u:object_r:srtd_exec:s0
+/system/bin/refnotify   u:object_r:refnotify_exec:s0
+/system/bin/modemd u:object_r:rild_exec:s0
+/system/bin/phoneserver u:object_r:rild_exec:s0
+/system/bin/modem_control u:object_r:rild_exec:s0
+/system/bin/rild_sp u:object_r:rild_exec:s0
+/system/bin/cp_diskserver u:object_r:cp_diskserver_exec:s0
+/system/bin/download    u:object_r:download_exec:s0
+
+/dev/block/zram0 u:object_r:zram_block_device:s0
+
+#
+/system/bin/batterysrv u:object_r:batterysrv_exec:s0
+
+# for core dump
+/data/corefile(/.*)?    u:object_r:coredump_file:s0
+
+# for hprofiles
+/data/misc/hprofs(/.*)? u:object_r:hprofs_file:s0

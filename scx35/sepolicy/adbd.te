@@ -1,0 +1,5 @@
+allow adbd system_data_file:dir { open read };
+allow adbd system_data_file:file { open read };
+allow adbd tmpfs:lnk_file read;
+allow adbd prod_file:file {getattr setattr read write open };
+allow adbd prod_file:dir {getattr search };

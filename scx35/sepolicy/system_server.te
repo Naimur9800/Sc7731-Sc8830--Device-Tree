@@ -1,0 +1,11 @@
+allow system_server unlabeled:file { write setattr };
+allow system_server socket_device:sock_file write;
+allow system_server drmserver:unix_stream_socket connectto;
+allow system_server mediaserver_service:service_manager add;
+allow system_server hostapd:unix_dgram_socket sendto;
+allow system_server wcnd:unix_stream_socket { connectto sendto };
+
+allow system_server fuse:dir search;
+allow system_server tmpfs:lnk_file r_file_perms;
+allow system_server bootanim_exec:file {execute read open execute_no_trans};
+allow system_server radio_device:chr_file { write };

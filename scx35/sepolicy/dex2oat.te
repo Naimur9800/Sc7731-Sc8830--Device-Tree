@@ -1,0 +1,2 @@
+allow dex2oat system_data_file:dir { write add_name };
+allow dex2oat system_data_file:file { create write open };

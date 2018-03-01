@@ -1,0 +1,18 @@
+allow init_shell kernel:system syslog_read;
+allow init_shell zygote_exec:file execute_no_trans;
+
+userdebug_or_eng(`
+    allow init_shell init_shell:capability sys_ptrace;
+')
+
+allow init_shell init_shell:capability sys_module;
+allow init_shell system_prop:property_service set;
+
+allow init_shell fuse:dir { write read search create open remove_name add_name rmdir rename reparent };
+allow init_shell fuse:file { append open create read write unlink getattr };
+allow init_shell properties_device:file execute;
+allow init_shell init_shell:process execmem;
+allow init_shell ctl_default_prop:property_service set;
+allow init_shell init_shell:udp_socket {create ioctl};
+allow init_shell default_prop:property_service { set };
+allow init_shell debug_prop:property_service { set };

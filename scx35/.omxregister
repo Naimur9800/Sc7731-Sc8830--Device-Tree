@@ -1,0 +1,2 @@
+/system/lib/libomxvpu.so
+ ==> OMX.vpu.video_decoder ==> OMX.vpu.video_decoder.avc:OMX.vpu.video_decoder.mpeg2: ==> /data/.omxregister

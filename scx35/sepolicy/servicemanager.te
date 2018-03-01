@@ -1,0 +1,6 @@
+allow servicemanager init_shell:dir search;
+allow servicemanager init_shell:file { read open };
+allow servicemanager zygote:dir search;
+allow servicemanager zygote:file { read open };
+allow servicemanager zygote:process getattr;
+allow servicemanager init_shell:process getattr;

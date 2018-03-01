@@ -1,0 +1,4 @@
+allow wpa prod_file:dir search;
+allow wpa prod_file:file { read open };
+allow wpa init_shell:unix_dgram_socket sendto;
+allow wpa radio:binder call;

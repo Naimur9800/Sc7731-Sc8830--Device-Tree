@@ -1,0 +1,12 @@
+recovery_only(`
+  allow recovery vfat:dir create_dir_perms;
+  allow recovery vfat:file create_file_perms;
+  allow recovery efuse_device:chr_file open;
+  allow recovery efuse_device:chr_file read;
+  allow recovery efuse_device:chr_file write;
+  # for backup and resume data
+  #allow recovery vfat:dir mounton;
+  allow recovery system_data_file:dir mounton;
+  allow recovery {system_ndebug_socket system_wpa_socket wpa_socket data_file_type -keystore_data_file -property_data_file}:dir {create_dir_perms relabelfrom relabelto};
+  allow recovery {system_ndebug_socket system_wpa_socket wpa_socket data_file_type -keystore_data_file -property_data_file}:{file lnk_file sock_file fifo_file} {create_file_perms relabelfrom relabelto};
+')

@@ -1,0 +1,4 @@
+#Type for prodnv file
+type prod_file,file_type;
+type srt_socket, file_type;
+type hprofs_file, file_type;

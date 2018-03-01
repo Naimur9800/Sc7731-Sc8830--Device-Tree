@@ -1,0 +1,23 @@
+allow untrusted_app unlabeled:dir { open read write search getattr remove_name add_name };
+allow untrusted_app unlabeled:file { open read write getattr setattr lock rename unlink };
+
+allow untrusted_app proc_sysrq:file getattr;
+allow untrusted_app sysfs_lowmemorykiller:file getattr;
+allow untrusted_app usermodehelper:file getattr;
+allow untrusted_app sysfs_wake_lock:file getattr;
+allow untrusted_app proc_security:file read;
+# SPRD: Add for fix bug391618 @{
+allow untrusted_app radio_data_file:dir { search read };
+allow untrusted_app radio_data_file:file open;
+# @}
+
+allow untrusted_app exec_type:file r_file_perms;
+allow untrusted_app tmpfs:lnk_file r_file_perms;
+
+allow untrusted_app srt_socket:sock_file {read write getattr };
+allow untrusted_app srtd:unix_stream_socket {read write getattr connectto};
+
+allow untrusted_app hprofs_file:dir { open create read write getattr search add_name remove_name };
+allow untrusted_app hprofs_file:file { open create read write getattr unlink };
+
+allow untrusted_app asec_apk_file:file execute;

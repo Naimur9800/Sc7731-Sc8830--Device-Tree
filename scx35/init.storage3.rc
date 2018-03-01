@@ -1,0 +1,31 @@
+######
+# for physical internal and
+# internal storage is primary
+# @{
+on boot
+    write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 2
+on early-fs
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
+
+    export PRIMARY_STORAGE_TYPE internal
+    export INTERNAL_STORAGE_TYPE physical
+
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /storage/sdcard1 0700 root root
+
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+
+# physical internal storage
+service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -w 1051 -f -d /mnt/media_rw/sdcard0 /storage/sdcard0
+    class late_start
+    disabled
+
+# physical external storage
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1052 -f -d /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
+# @}
+######
+
